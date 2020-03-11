@@ -67,12 +67,21 @@
 		.layer_icon_tree {
 			background-color:#2AAD27
 		}
+		.embedded header {
+			display: none;
+		}
+		.embedded #map {
+			height: 100vh;
+		}
 		@media screen and (min-width: 600px) {
 			header {
 				height: 10vh;
 			}
 			#map {
 				height: 90vh;
+			}
+			.embedded #map {
+				height: 100vh;
 			}
 		}
 	</style>
@@ -85,6 +94,15 @@
 	<div id='map'></div>
 
 	<script>
+		const queryString = window.location.search;
+		const urlParams = new URLSearchParams(queryString);
+		const embedded = urlParams.get('embedded');
+
+		if (embedded == 'true') {
+			var body = document.body;
+			body.classList.add('embedded');
+		}
+
 		var getJSON = function(url, callback) {
 		  var xhr = new XMLHttpRequest();
 		  xhr.open('GET', url, true);
