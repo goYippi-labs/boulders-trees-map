@@ -125,6 +125,7 @@
 
 			if (feature.properties && feature.properties.data.original_bild) {
 				var image_url = feature.properties.data.original_bild.replace('"Foto":','');
+				image_url = image_url.replace('http:','https:');
 				popupContent += '<img src="' + image_url + '" width="300" />';
 			}
 
@@ -171,6 +172,7 @@
 
 			if (feature.properties && feature.properties.data.original_bild) {
 				var image_url = feature.properties.data.original_bild.replace('"Foto":','');
+				image_url = image_url.replace('http:','https:');
 				popupContent += '<img src="' + image_url + '" width="300" />';
 			}
 
