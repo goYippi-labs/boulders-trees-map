@@ -11,7 +11,7 @@ https://daten.berlin.de/datensaetze/als-naturdenkmale-gesch%C3%BCtzte-b%C3%A4ume
 Embedding via iframe:
 
 ```html
-<iframe src="https://goyippi-labs.github.io/boulders-trees-map/?embedded=true" width="100%" height="500" frameborder="0"></iframe>
+<iframe src="https://goyippi-labs.github.io/boulders-trees-map/" width="100%" height="500" frameborder="0"></iframe>
 ```
 ---
 
