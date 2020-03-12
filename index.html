@@ -109,11 +109,9 @@
 	<div id='map'></div>
 
 	<script>
-		const queryString = window.location.search;
-		const urlParams = new URLSearchParams(queryString);
-		const embedded = urlParams.get('embedded');
+		var isInIframe = (window.location != window.parent.location);
 
-		if (embedded == 'true') {
+		if (isInIframe == true) {
 			var body = document.body;
 			body.classList.add('embedded');
 		}
