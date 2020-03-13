@@ -6,6 +6,8 @@ Data source (CC-BY Bezirksamt Charlottenburg-Wilmersdorf von Berlin, Umwelt- und
 https://daten.berlin.de/datensaetze/als-naturdenkmale-gesch%C3%BCtzte-findlinge-charlottenburg-wilmersdorf-0
 https://daten.berlin.de/datensaetze/als-naturdenkmale-gesch%C3%BCtzte-b%C3%A4ume-charlottenburg-wilmersdorf-0
 
+Markers by Kati Meden
+
 ---
 
 Embedding via iframe:
