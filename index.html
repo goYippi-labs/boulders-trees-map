@@ -126,18 +126,18 @@
 		}
 
 		var getJSON = function(url, callback) {
-		  var xhr = new XMLHttpRequest();
-		  xhr.open('GET', url, true);
-		  xhr.responseType = 'json';
-		  xhr.onload = function() {
-		    var status = xhr.status;
-		    if (status === 200) {
-		      callback(null, xhr.response);
-		    } else {
-		      callback(status, xhr.response);
-		    }
-		  };
-		  xhr.send();
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', url, true);
+			xhr.responseType = 'json';
+			xhr.onload = function() {
+				var status = xhr.status;
+				if (status === 200) {
+					callback(null, xhr.response);
+				} else {
+					callback(status, xhr.response);
+				}
+			};
+			xhr.send();
 		};
 		
 		var onEachBoulderFeature = function(feature, layer) {
@@ -220,8 +220,8 @@
 		}
 
 		var greyIcon = new L.Icon({
-		  iconUrl: 'assets/marker/boulder.png',
-		  shadowUrl: 'assets/marker/marker-shadow.png',
+			iconUrl: 'assets/marker/boulder.png',
+			shadowUrl: 'assets/marker/marker-shadow.png',
 			iconSize: [25, 22],
 			iconAnchor: [12, 22],
 			popupAnchor: [1, -18],
@@ -229,12 +229,12 @@
 		});
 
 		var greenIcon = new L.Icon({
-		  iconUrl: 'assets/marker/tree.png',
-		  shadowUrl: 'assets/marker/marker-shadow.png',
+			iconUrl: 'assets/marker/tree.png',
+			shadowUrl: 'assets/marker/marker-shadow.png',
 			iconSize: [25, 49],
-		  iconAnchor: [12, 49],
-		  popupAnchor: [1, -41],
-		  shadowSize: [49, 49]
+			iconAnchor: [12, 49],
+			popupAnchor: [1, -41],
+			shadowSize: [49, 49]
 		});
 
 		var boulders = L.layerGroup();
