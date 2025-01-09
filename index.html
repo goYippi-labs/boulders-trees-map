@@ -139,7 +139,7 @@
 			};
 			xhr.send();
 		};
-		
+
 		var onEachBoulderFeature = function(feature, layer) {
 			var popupContent = '';
 			if (feature.properties && feature.properties.data.standort) {
@@ -247,7 +247,7 @@
 		});
 
 		L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
-			attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ | Data <a href="https://creativecommons.org/licenses/by/3.0/de/" target="_blank">CC-BY</a> <a href="https://daten.berlin.de/datensaetze?author_string=Bezirksamt+Charlottenburg-Wilmersdorf+von+Berlin%2C+Umwelt-+und+Naturschutzamt" target="_blank">Bezirksamt Charlottenburg-Wilmersdorf von Berlin, Umwelt- und Naturschutzamt</a>',
+			attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ | Data: <a href="https://creativecommons.org/licenses/by/3.0/de/" target="_blank">CC-BY</a> <a href="https://daten.berlin.de/datensaetze?author_string=Bezirksamt+Charlottenburg-Wilmersdorf+von+Berlin%2C+Umwelt-+und+Naturschutzamt" target="_blank">Bezirksamt Charlottenburg-Wilmersdorf von Berlin, Umwelt- und Naturschutzamt</a>, <a href=https://www.govdata.de/dl-de/by-2-0">DL-DE->BY-2.0</a> <a href="https://daten.berlin.de/datensaetze/schutzgebiete-und-schutzobjekte-nach-naturschutzrecht-berlin-inklusive-natura-2000-wfs-c36fe3f2">Geoportal Berlin / Schutzgebiete und Schutzobjekte nach Naturschutzrecht Berlin (inklusive Natura 2000)</a>',
 			maxZoom: 16
 		}).addTo(map);
 
@@ -283,7 +283,61 @@
 
 		var overlays = {
 			'<span class="layer_icon layer_icon_boulder"></span> Findlinge': boulders,
-			'<span class="layer_icon layer_icon_tree"></span> Bäume': trees
+			'<span class="layer_icon layer_icon_tree"></span> Bäume': trees,
+
+			/*'Naturdenkmale: Bäume und Findlinge': L.tileLayer.wms('https://gdi.berlin.de/services/wms/schutzgebiete?SERVICE=WMS', {
+				layers: 'a_nd',
+				transparent: 'true',
+				format: 'image/png'
+			}),*/
+
+			'Special Protected Area nach EU-Vogelschutzrichtlinie (SPA)': L.tileLayer.wms('https://gdi.berlin.de/services/wms/schutzgebiete?SERVICE=WMS', {
+				layers: 'b_spa',
+				transparent: 'true',
+				format: 'image/png'
+			}),
+
+			'Flora-Fauna-Habitat-Gebiete (FFH)': L.tileLayer.wms('https://gdi.berlin.de/services/wms/schutzgebiete?SERVICE=WMS', {
+				layers: 'c_ffh',
+				transparent: 'true',
+				format: 'image/png'
+			}),
+
+			'Naturpark': L.tileLayer.wms('https://gdi.berlin.de/services/wms/schutzgebiete?SERVICE=WMS', {
+				layers: 'd_np',
+				transparent: 'true',
+				format: 'image/png'
+			}),
+
+			'Naturdenkmal': L.tileLayer.wms('https://gdi.berlin.de/services/wms/schutzgebiete?SERVICE=WMS', {
+				layers: 'e_fnd',
+				transparent: 'true',
+				format: 'image/png'
+			}),
+
+			'Flächen mit spezieller Regelung': L.tileLayer.wms('https://gdi.berlin.de/services/wms/schutzgebiete?SERVICE=WMS', {
+				layers: 'f_fspr',
+				transparent: 'true',
+				format: 'image/png'
+			}),
+
+			'Geschützter Landschaftsbestandteil': L.tileLayer.wms('https://gdi.berlin.de/services/wms/schutzgebiete?SERVICE=WMS', {
+				layers: 'g_glb',
+				transparent: 'true',
+				format: 'image/png'
+			}),
+
+			'Naturschutzgebiet': L.tileLayer.wms('https://gdi.berlin.de/services/wms/schutzgebiete?SERVICE=WMS', {
+				layers: 'h_nsg',
+				transparent: 'true',
+				format: 'image/png'
+			}),
+
+			'Landschaftsschutzgebiet': L.tileLayer.wms('https://gdi.berlin.de/services/wms/schutzgebiete?SERVICE=WMS', {
+				layers: 'i_lsg',
+				transparent: 'true',
+				format: 'image/png'
+			}),
 		};
 
 		L.control.layers(baseLayers,overlays).addTo(map);
